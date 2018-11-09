@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body >
+
+<div id="index">
+    <header>
+        <div>
+            <div class="header-left">
+                <img src="./images/11.png" alt="">
+                <span>首页</span>&nbsp;&nbsp;
+                <span>礼包中心</span>&nbsp;&nbsp;
+                <img src="./images/12.png" alt="">
+                <span>网站导航</span>&nbsp;&nbsp;
+                <img src="./images/13.png" alt="">
+                <span>客服QQ</span>
+            </div>
+            <div class="header-right">
+                <span>登录</span>&nbsp;&nbsp;
+                <span>注册</span>&nbsp;&nbsp;
+                <span>收藏</span>&nbsp;&nbsp;
+                <span>防沉迷</span>&nbsp;&nbsp;
+                <span>适龄提示:18+</span>&nbsp;&nbsp;
+                <span>家长监护系统</span>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <!-- 导航栏 -->
+        <div class="menutop">
+            <img src="./images/menu.png" alt="">
+        </div>
+        <!-- 内容 -->
+        <div class="cont">
+            <!-- 左边的 -->
+            <div class="left-box">
+                <!-- 轮播图 -->
+                <div class="sowing-map">
+                    <div class="swiperimg">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="./images/sowingmap.jpg" alt=""></div>
+                                <div class="swiper-slide"><img src="./images/sowingmap.jpg" alt=""></div>
+                                <div class="swiper-slide"><img src="./images/sowingmap.jpg" alt=""></div>
+                            </div>
+                            <!-- 如果需要分页器 -->
+                            <div class="swiper-pagination"></div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- 吊牌 -->
+                <div class="tag">
+                    <img src="./images/1.png" alt="">
+                    <img src="./images/2.png" alt="">
+                    <img src="./images/3.png" alt="">
+                </div>
+                <!-- 今日新闻 -->
+                <div class="today-news">
+                    <span class="title">今日新闻</span>
+                    <div class="tab">
+                        <div v-for="(item,index) in news"  @click="todayNews(index)">
+                            <span class="tabitem"  :class="{active:ind==index}" >{{item}}</span>
+                        </div>
+                        <span>更多+</span>
+                    </div>
+                    <div class="contone" v-if="ind==0">
+                        <img class="cont-left" src="./images/5.png" alt="">
+                        <div class="cont-right" >
+                            <div v-for="item in 5">
+                                <img src="./images/sanjiaoicon.png" alt="">
+                                <span>苹果发布ipad Air及新ipad mimi</span>
+                                <span>[10/31]</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conttwo" v-if="ind==1">
+                        <img class="cont-left" src="./images/5.png" alt="">
+                        <div class="cont-right" >
+                            <div v-for="item in 5">
+                                <img src="./images/sanjiaoicon.png" alt="">
+                                <span>华为发布mate20 及新处理器</span>
+                                <span>[10/31]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 新游 -->
+                <div class="newgame">
+                    <span class="title">新游</span>
+                    <div class="tab">
+                        <div v-for="(item,index) in newgametab" @click="newGame(index)">
+                            <span class="tabitem"  :class="{active:indtwo==index}" >{{item}}</span>
+                        </div>
+                        <span>更多+</span>
+                    </div>
+                    <div class="contone" v-if="indtwo==0">
+                        <div class="gamebox">
+                            <div  v-for="item in 12" >
+                                <img src="./images/7.png" alt=""><br>
+                                <span>造化乾坤</span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="conttwo" v-if="indtwo==1">
+                        <div class="gamebox">
+                            <div  v-for="item in 12" >
+                                <img src="./images/7.png" alt=""><br>
+                                <span>斗破苍穹</span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="contthree" v-if="indtwo==2">
+                        <div class="gamebox">
+                            <div  v-for="item in 12" >
+                                <img src="./images/7.png" alt=""><br>
+                                <span>斗罗大陆</span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <!-- 游戏分类 -->
+                <div class="gameClass">
+                    <span class="title">游戏分类</span>
+                    <div class="top">
+                        <span>更多分类>></span>
+                    </div>
+                    <div class="bot">
+                        <div v-for="item in 12">
+                            <img src="./images/8.png" alt="">
+                            <span>点兵三国</span>
+                            <button>下载</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-box">
+                <img class="downloadbtn" src="./images/downloadbtn.png" alt="">
+                <div class="hotlist">
+                    <span class="title">新游热榜</span>
+                    <div class="cont-box">
+                        <div v-for="item in 6">
+                            <img src="./images/7.png" alt="">
+                            <span>就爱玩三国 获得 点兵三国国庆大礼包</span>
+                            <button>下载</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="download-rankings">
+                    <span class="title">下载排行榜</span>
+                    <table>
+                        <tr>
+                            <th>排名</th>
+                            <th>网游</th>
+                            <th>分类</th>
+                        </tr>
+                        <tr class="conttr" v-for="(item,index) in 11">
+                            <td style="width:100px;">{{index+1}}</td>
+                            <td style="width:220px;">红警大作战</td>
+                            <td style="width:100px;">跑酷</td>
+                        </tr>
+                    </table>
+                    <span class="morerankings">更多排行>></span>
+                </div>
+                <div class="openmeter">
+                    <span class="title opac" v-for="(item,index) in openmeter"  @click="opac(index)" :class="{activethird:indthree==index}"  >{{item}}</span>
+                </div>
+            </div>
+            <div class="bottom-box">
+                <div class="friendshiplink">
+                    <span class="title">友情链接</span>
+                    <div class="cont-box">
+                        <span>腾讯游戏频道 | 多玩游戏 | 太平洋游戏网 | 搜狗 | 网易 | 京东 | 亚马逊 | 淘宝 | 拍拍 | 太平洋在线 | 中关村在线 | 网络电视在线</span>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            
+        </div>
+       
+    </div>
+    <footer>
+        <span class="hrefs">关于我们 | 服务条款 | 游戏客服 | 商务合作</span><br>
+        <span>西安叁陆玖玖网络@版本所有</span><br>
+        <span>西安叁陆玖玖网络科技有限责任公司 陕ICP备18015913号-1</span><br>
+        <span>抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</span>
+    </footer>
+    
+</div>
+</body>
+</html>
